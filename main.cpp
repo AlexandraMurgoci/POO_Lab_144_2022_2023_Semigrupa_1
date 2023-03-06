@@ -12,15 +12,23 @@ public:
     }
 
     //constructor de copiere
-    Complex(Complex &complex): real(complex.real) {
+    Complex(const Complex &complex): real(complex.real) {
         imaginary = complex.imaginary;
 //        std::cout << "S-a apelat constructorul de copiere" << std::endl;
     }
+
+
 
     //destructor
     ~Complex() {
         //nu trebuie nimic dezalocat manual
 //        std::cout << "S-a apelat destructorul" << std::endl;
+    }
+
+    Complex operator=(Complex complex) {
+        real = complex.GetReal();
+        imaginary = complex.imaginary;
+        return *this;
     }
 
     //setter
@@ -49,6 +57,16 @@ public:
         Complex result;
         //TODO mate
         return result;
+    }
+
+    friend std::istream& operator>>(std::istream &in, Complex &c) {
+        in >> c.real >> c.imaginary;
+        return in;
+    }
+
+    friend std::ostream& operator<<(std::ostream &out, Complex c) {
+        out << c.real << " " << c.imaginary;
+        return out;
     }
 
 };
@@ -123,12 +141,32 @@ void TestOperatorImpartire() {
     std::cout << c3.GetReal() << " " << c3.GetImaginary() << std::endl;
 }
 
+void TestOperatorEgal() {
+    Complex c1(5, 1), c2(2, 1);
+    c1 = c2;
+    std::cout << c1.GetReal() << " " << c1.GetImaginary() << std::endl;
+}
+
+void TestOperatorCitire() {
+    Complex c;
+    std::cin >> c;
+    std::cout << c.GetReal() << " " << c.GetImaginary() << std::endl;
+}
+
+void TestOperatorAfisare() {
+    Complex c(1, 0.5);
+    std::cout << c;
+}
+
 int main() {
 //    TestGetterAndSetter();
 //    TestConstructorInit();
 //    TestConstructorCopiere();
 //    TestOperatorPlus();
 //    TestOperatorInmultire();
-    TestOperatorImpartire();
+//    TestOperatorImpartire();
+//    TestOperatorEgal();
+//    TestOperatorCitire();
+//    TestOperatorAfisare();
     return 0;
 }
