@@ -2,7 +2,6 @@
 #ifndef POO_LAB_144_2022_2023_SEMIGRUPA_1_FORMAPATRAT_H
 #define POO_LAB_144_2022_2023_SEMIGRUPA_1_FORMAPATRAT_H
 
-
 #include "Forma.h"
 
 class FormaPatrat: public Forma {

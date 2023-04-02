@@ -1,5 +1,6 @@
 
 #include "BunicutaTest.h"
+#include <iostream>
 #include <vector>
 
 void BunicutaTest::TestareMetodeBaza() {
@@ -40,6 +41,7 @@ void BunicutaTest::TestUpcastingSiDowncasting() {
     patrat -> SetInaltime(4);
 
     //downcasting, determin ca in pointerul la Forma este o FormaPatrat
+    //pt info dynamic_cast: https://en.cppreference.com/w/cpp/language/dynamic_cast
     if(FormaPatrat *castPatrat = dynamic_cast<FormaPatrat *>(patrat)) {
         castPatrat -> SetLatura(7);
     }
