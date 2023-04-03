@@ -31,6 +31,6 @@ std::istream& operator>>(std::istream& in, FormaPatrat& patrat) {
     return in;
 }
 
-double FormaPatrat::CantitateGem() {
-    return 2 * inaltime * latura * latura;
+double FormaPatrat::ArieBaza() {
+    return latura * latura;
 }

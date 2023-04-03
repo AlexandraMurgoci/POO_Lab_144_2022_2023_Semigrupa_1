@@ -31,8 +31,12 @@ void Forma::Afisare(std::ostream& out) {
 double Forma::CantitateFrisca() {
     return 0;
 }
+
+double Forma::Volum() {
+    return inaltime * ArieBaza();
+}
 double Forma::CantitateGem() {
-    return 0;
+    return 2 * Volum();
 }
 
 //operator afisare

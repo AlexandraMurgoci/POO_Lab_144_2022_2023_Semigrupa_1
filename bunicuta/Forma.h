@@ -7,6 +7,9 @@
 class Forma {
 protected:
     double inaltime;
+private:
+    double Volum();
+    virtual double ArieBaza() = 0;
 public:
     //constructori I (param si neparam)
     Forma();
@@ -21,7 +24,7 @@ public:
     virtual void Afisare();
     virtual void Afisare(std::ostream&);
     virtual double CantitateFrisca();
-    virtual double CantitateGem();
+    double CantitateGem();
 
     friend std::istream& operator>>(std::istream& in, Forma& forma);
 };

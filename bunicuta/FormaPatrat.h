@@ -6,6 +6,7 @@
 
 class FormaPatrat: public Forma {
     double latura;
+    double ArieBaza();
 public:
     //constructori I (param si neparam)
     FormaPatrat();
@@ -21,8 +22,6 @@ public:
     void Afisare(std::ostream&);
 
     friend std::istream& operator>>(std::istream& in, FormaPatrat& patrat);
-
-    double CantitateGem();
 };
 
 

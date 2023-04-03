@@ -27,6 +27,6 @@ std::istream& operator>>(std::istream& in, FormaDreptunghi& dreptunghi) {
     return in;
 }
 
-double FormaDreptunghi::CantitateGem() {
-    return 2 * inaltime * laturaMica * laturaMare;
+double FormaDreptunghi::ArieBaza() {
+    return laturaMica * laturaMare;
 }

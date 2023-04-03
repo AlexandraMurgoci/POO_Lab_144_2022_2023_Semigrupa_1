@@ -11,6 +11,7 @@ class MeniuBucatariaBunicutei {
     BucatariaBunicutei *bucatarie;
 
     //membri statici
+    //TODO verifica eroare de multi declaration membri statici
 //    static const std::string ADD;
 //    static const std::string TOTAL;
 //    static const std::string STOP;
@@ -19,7 +20,7 @@ public:
     void SetBucatarie(BucatariaBunicutei *bucatarie);
     void RunMenu();
     //metoda statica
-//    static std::vector<std::string> GetAllCommands();
+    static std::vector<std::string> GetAllCommands();
 };
 //const std::string MeniuBucatariaBunicutei::ADD = "ADD";
 //const std::string MeniuBucatariaBunicutei::TOTAL = "TOTAL";
