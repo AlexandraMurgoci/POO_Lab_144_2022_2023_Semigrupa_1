@@ -20,6 +20,17 @@ FormaPatrat::~FormaPatrat() {
 double FormaPatrat::GetLatura() { return latura; }
 void FormaPatrat::SetLatura(double latura) { this->latura = latura; }
 
-void FormaPatrat::Afisare() {
-    std::cout << "FormaPatrat: inaltime - " << inaltime << "; latura - " << latura << std::endl;
+void FormaPatrat::Afisare(std::ostream& out) {
+    out << "FormaPatrat: inaltime - " << inaltime << "; latura - " << latura << std::endl;
+}
+
+//operator citire
+std::istream& operator>>(std::istream& in, FormaPatrat& patrat) {
+    in >> patrat.latura;
+    in >> dynamic_cast<Forma&>(patrat);
+    return in;
+}
+
+double FormaPatrat::CantitateGem() {
+    return 2 * inaltime * latura * latura;
 }

@@ -8,6 +8,7 @@ class FormaDreptunghi: public Forma {
     double laturaMica;
     double laturaMare;
 
+public:
     //constructori I (param si neparam)
     FormaDreptunghi();
     FormaDreptunghi(double inaltime, double laturaMica, double laturaMare);
@@ -20,7 +21,11 @@ class FormaDreptunghi: public Forma {
     double GetLaturaMare();
     void SetLaturaMare(double laturaMare);
 
-    void Afisare();
+    void Afisare(std::ostream&);
+
+    friend std::istream& operator>>(std::istream& in, FormaDreptunghi& patrat);
+
+    double CantitateGem();
 };
 
 

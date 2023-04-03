@@ -41,7 +41,7 @@ double BucatariaBunicutei::CantitateFriscaTotal() {
 double BucatariaBunicutei::CantitateGemTotal() {
     double total = 0;
     for(int i = 0; i < forme.size(); i++) {
-        total += forme[i]->CantitateFrisca();
+        total += forme[i]->CantitateGem();
     }
     return total;
 }

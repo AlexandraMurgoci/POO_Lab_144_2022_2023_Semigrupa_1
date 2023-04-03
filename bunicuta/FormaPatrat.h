@@ -17,7 +17,12 @@ public:
     double GetLatura();
     void SetLatura(double latura);
 
-    void Afisare();
+    void Afisare() {Forma::Afisare();} //TODO de ce e necesar??
+    void Afisare(std::ostream&);
+
+    friend std::istream& operator>>(std::istream& in, FormaPatrat& patrat);
+
+    double CantitateGem();
 };
 
 

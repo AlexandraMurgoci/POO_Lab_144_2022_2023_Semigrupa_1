@@ -21,7 +21,11 @@ double Forma::GetInaltime() { return inaltime; }
 void Forma::SetInaltime(double inaltime) { this -> inaltime = inaltime; }
 
 void Forma::Afisare() {
-    std::cout << "Forma: inaltime - " << inaltime << std::endl;
+    Afisare(std::cout);
+}
+
+void Forma::Afisare(std::ostream& out) {
+    out << "Forma: inaltime - " << inaltime << std::endl;
 }
 
 double Forma::CantitateFrisca() {
@@ -29,4 +33,15 @@ double Forma::CantitateFrisca() {
 }
 double Forma::CantitateGem() {
     return 0;
+}
+
+//operator afisare
+std::ostream& operator<<(std::ostream& out, Forma& forma) {
+    forma.Afisare(out);
+    return out;
+}
+//operator citire
+std::istream& operator>>(std::istream& in, Forma& forma) {
+    in >> forma.inaltime;
+    return in;
 }

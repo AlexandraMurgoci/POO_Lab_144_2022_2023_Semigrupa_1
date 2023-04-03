@@ -16,6 +16,17 @@ void FormaDreptunghi::SetLaturaMica(double latura) { this->laturaMica = laturaMi
 double FormaDreptunghi::GetLaturaMare() { return laturaMare; }
 void FormaDreptunghi::SetLaturaMare(double latura) { this->laturaMare = laturaMare; }
 
-void FormaDreptunghi::Afisare() {
-    std::cout << "FormaDreptunghi: inaltime - " << inaltime << "; latura mica - " << laturaMica << "; latura mare - " << laturaMare <<  std::endl;
+void FormaDreptunghi::Afisare(std::ostream& out) {
+    out << "FormaDreptunghi: inaltime - " << inaltime << "; latura mica - " << laturaMica << "; latura mare - " << laturaMare <<  std::endl;
+}
+
+//operator citire
+std::istream& operator>>(std::istream& in, FormaDreptunghi& dreptunghi) {
+    in >> dreptunghi.laturaMica >> dreptunghi.laturaMare;
+    in >> dynamic_cast<Forma&>(dreptunghi);
+    return in;
+}
+
+double FormaDreptunghi::CantitateGem() {
+    return 2 * inaltime * laturaMica * laturaMare;
 }

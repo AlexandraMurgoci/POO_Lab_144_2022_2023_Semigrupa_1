@@ -1,5 +1,6 @@
 
 #include "BunicutaTest.h"
+#include "FormaDreptunghi.h"
 #include <iostream>
 #include <vector>
 
@@ -60,9 +61,28 @@ void BunicutaTest::TestUpcastingSiDowncasting() {
     }
 }
 
-void BunicutaTest::Test() {
+void BunicutaTest::TestOperatoriAfisareSiCitire() {
+    Forma forma(3);
+    FormaPatrat patrat(3, 5);
+    FormaDreptunghi dreptunghi(4, 5, 6);
+
+    std::cout << forma << std::endl;
+    std::cout << patrat << std::endl;
+    std::cout << dreptunghi << std::endl;
+
+    std::cin >> forma;
+    std::cin >> patrat;
+    std::cin >> dreptunghi;
+
+    std::cout << forma << std::endl;
+    std::cout << patrat << std::endl;
+    std::cout << dreptunghi << std::endl;
+}
+
+void BunicutaTest::TestFunctionalitatiIndividuale() {
 //    TestareMetodeBaza();
 //    TestareOrdineConstructoriSiDestructori();
 //    TestareAfisare();
-    TestUpcastingSiDowncasting();
+//    TestUpcastingSiDowncasting();
+    TestOperatoriAfisareSiCitire();
 }

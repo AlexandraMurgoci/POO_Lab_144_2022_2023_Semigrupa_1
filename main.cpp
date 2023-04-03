@@ -1,6 +1,8 @@
 #include <iostream>
 #include "complex/ComplexTest.h"
 #include "bunicuta/BunicutaTest.h"
+#include "bunicuta/BucatariaBunicutei.h"
+#include "bunicuta/MeniuBucatariaBunicutei.h"
 
 void TestareClasaComplex() {
     ComplexTest complexTest;
@@ -8,8 +10,19 @@ void TestareClasaComplex() {
 }
 
 void TestareProblemaBunicuta() {
-    BunicutaTest bunicutaTest;
-    bunicutaTest.Test();
+//    BunicutaTest bunicutaTest;
+//    bunicutaTest.TestFunctionalitatiIndividuale();
+
+    BucatariaBunicutei *bucatariaBunicutei = new BucatariaBunicutei;
+    MeniuBucatariaBunicutei menu;
+    menu.SetBucatarie(bucatariaBunicutei);
+
+    //apelare metoda statica
+//    MeniuBucatariaBunicutei::GetAllCommands();
+
+    menu.RunMenu();
+
+    delete bucatariaBunicutei;
 }
 
 int main() {

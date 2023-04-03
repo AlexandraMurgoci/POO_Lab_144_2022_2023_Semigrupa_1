@@ -12,8 +12,9 @@ class BunicutaTest {
     void TestareOrdineConstructoriSiDestructori();
     void TestareAfisare();
     void TestUpcastingSiDowncasting();
+    void TestOperatoriAfisareSiCitire();
 public:
-    void Test();
+    void TestFunctionalitatiIndividuale();
 };
 
 
