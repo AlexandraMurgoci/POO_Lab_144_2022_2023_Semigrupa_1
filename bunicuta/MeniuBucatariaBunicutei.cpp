@@ -3,6 +3,10 @@
 #include "FormaPatrat.h"
 #include "FormaDreptunghi.h"
 
+const std::string MeniuBucatariaBunicutei::ADD = "ADD";
+const std::string MeniuBucatariaBunicutei::TOTAL = "TOTAL";
+const std::string MeniuBucatariaBunicutei::STOP = "STOP";
+
 void MeniuBucatariaBunicutei::SetBucatarie(BucatariaBunicutei *bucatarie) {
     this->bucatarie = bucatarie;
 }
@@ -23,8 +27,8 @@ void MeniuBucatariaBunicutei::RunMenu() {
     std::string command;
     std::cin >> command;
 
-    while(command != "STOP") {
-        if(command == "ADD") {
+    while(command != STOP) {
+        if(command == ADD) {
             //TODO submeniu citire tip de forma
             //temporar, imi declar doua forme si le adaug
             bucatarie->AdaugaForma(new FormaPatrat(2, 5));
@@ -33,7 +37,7 @@ void MeniuBucatariaBunicutei::RunMenu() {
             DisplayMenuMessage();
         }
             //TODO remove
-        else if(command == "TOTAL") {
+        else if(command == TOTAL) {
             std::cout << "Total cantitate frisca: " << bucatarie->CantitateFriscaTotal() << std::endl;
             std::cout << "Total cantitate gem: " << bucatarie->CantitateGemTotal() << std::endl;
             std::cout << std::endl;
@@ -47,10 +51,10 @@ void MeniuBucatariaBunicutei::RunMenu() {
     }
 }
 
-//std::vector<std::string> MeniuBucatariaBunicutei::GetAllCommands() {
-//    std::vector<std::string> commands;
-//    commands.push_back(ADD);
-//    commands.push_back(TOTAL);
-//    commands.push_back(STOP);
-//    return commands;
-//}
+std::vector<std::string> MeniuBucatariaBunicutei::GetAllCommands() {
+    std::vector<std::string> commands;
+    commands.push_back(ADD);
+    commands.push_back(TOTAL);
+    commands.push_back(STOP);
+    return commands;
+}

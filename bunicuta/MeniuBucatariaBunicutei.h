@@ -11,10 +11,9 @@ class MeniuBucatariaBunicutei {
     BucatariaBunicutei *bucatarie;
 
     //membri statici
-    //TODO verifica eroare de multi declaration membri statici
-//    static const std::string ADD;
-//    static const std::string TOTAL;
-//    static const std::string STOP;
+    static const std::string ADD;
+    static const std::string TOTAL;
+    static const std::string STOP;
     void DisplayMenuMessage();
 public:
     void SetBucatarie(BucatariaBunicutei *bucatarie);
@@ -22,9 +21,6 @@ public:
     //metoda statica
     static std::vector<std::string> GetAllCommands();
 };
-//const std::string MeniuBucatariaBunicutei::ADD = "ADD";
-//const std::string MeniuBucatariaBunicutei::TOTAL = "TOTAL";
-//const std::string MeniuBucatariaBunicutei::STOP = "STOP";
 
 
 #endif //POO_LAB_144_2022_2023_SEMIGRUPA_1_MENIUBUCATARIABUNICUTEI_H
